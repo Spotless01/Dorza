@@ -529,41 +529,94 @@ body {
   }
 }
 
-/* Success Popup */
+/* ===============================
+   PREMIUM SUCCESS POPUP
+================================ */
+
 .success-popup {
   position: fixed;
   inset: 0;
-  background: #2b1c59;
+  background: rgba(10, 5, 30, 0.75);
+  backdrop-filter: blur(8px);
   display: none;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
+  animation: fadeInOverlay 0.4s ease forwards;
 }
 
 .success-box {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 15px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(25px);
+  padding: 50px 40px;
+  border-radius: 25px;
   text-align: center;
-  color: #2b1c59;
+  color: #ffffff;
+  width: 90%;
+  max-width: 420px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  animation: popupScale 0.5s ease forwards;
 }
 
+/* Success Icon Circle */
+.success-box::before {
+  content: "✓";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #f5b301, #ffcc33);
+  color: #111;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(245,179,1,0.5);
+}
+
+.success-box p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* Close Button */
 .success-box button {
-  margin-top: 15px;
-  padding: 10px 20px;
+  padding: 12px 28px;
   border: none;
-  background: #f4b400;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f5b301, #ffcc33);
+  color: #111;
+  font-weight: 600;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
-/* Animations */
-@keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-50px); }
-  to { opacity: 1; transform: translateX(0); }
+.success-box button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(245,179,1,0.4);
 }
 
-@keyframes slideInRight {
-  from { opacity: 0; transform: translateX(50px); }
-  to { opacity: 1; transform: translateX(0); }
+/* ===============================
+   ANIMATIONS
+================================ */
+
+@keyframes popupScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* ===============================
@@ -693,4 +746,5 @@ body {
   .mission-vision-wrapper {
     flex-direction: column;
   }
+
 }
