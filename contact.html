@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav-container">
+  <a href="home.html" class="brand-name">Dorza</a>
+
+  <ul class="nav-listing">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="about.html">About Us</a></li>
+  </ul>
+
+  <div class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+</nav>
+
+<main>
+<section class="contact-section">
+  <div class="contact-wrapper">
+
+    <!-- Left Info -->
+    <div class="contact-info">
+      <h1 class="contact-us-h1">Dorza</h1>
+      <h3 class="contact-us-h3">
+        Interested in our premium wooden and security doors?
+        Send us a message and our team will respond immediately.
+      </h3>
+
+      <div class="info-box">
+        <p><strong>WhatsApp:</strong> +233551836194 | +233504796215</p>
+        <p><strong>Email:</strong> dorzagh@gmail.com</p>
+        <p><strong>Location:</strong> Accra, Ghana</p>
+      </div>
+    </div>
+
+    <!-- Right Form -->
+    <div class="contact-card">
+      <form id="premiumContactForm" autocomplete="off">
+
+  <div class="form-group">
+    <input type="text" id="name" required>
+    <label>Full Name</label>
+  </div>
+
+  <div class="form-group">
+    <input type="tel" id="phone" required>
+    <label>Phone Number</label>
+  </div>
+
+  <div class="form-group">
+    <textarea id="message" rows="4"></textarea>
+    <label>Note (Optional)</label>
+  </div>
+
+  <button type="submit" class="submit-btn">
+    Send Message
+  </button>
+
+</form>
+    </div>
+
+  </div>
+</section>
+
+<!-- Success Popup -->
+<div class="success-popup" id="successPopup">
+  <div class="success-box">
+    <p>✅ Message Sent Successfully</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+</main>
+
+  <script>
+    const whatsappNumber = "233551836194";
+const emailAddress = "dorzagh@gmail.com";
+
+const form = document.getElementById("premiumContactForm");
+const popup = document.getElementById("successPopup");
+const submitBtn = document.querySelector(".submit-btn");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  submitBtn.textContent = "Sending your message...";
+  submitBtn.disabled = true;
+
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const message = document.getElementById("message").value;
+
+  const text =
+    `Hello Doorza,%0A%0A` +
+    `Name: ${name}%0A` +
+    `Phone: ${phone}%0A` +
+    `Note: ${message}`;
+
+  // Open WhatsApp
+  window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
+
+  // Small delay for smoother UX
+  setTimeout(() => {
+    window.location.href =
+      `mailto:${emailAddress}?subject=New Doorza Enquiry&body=${text}`;
+
+    popup.style.display = "flex";
+
+    form.reset();
+    submitBtn.textContent = "Send Message";
+    submitBtn.disabled = false;
+
+  }, 1200);
+});
+
+function closePopup() {
+  popup.style.display = "none";
+}
+</script>
+
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-listing");
+
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    hamburger.classList.toggle("active");
+  });
+</script>
+
+</body>
+</html>

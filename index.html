@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dorza</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-------- Navigation Section -------->
+<nav class="nav-container">
+  <a href="home.html" class="brand-name">Dorza</a>
+
+  <ul class="nav-listing">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="about.html">About Us</a></li>
+  </ul>
+
+  <div class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>
+        <span class="highlight">Dorza</span><br>
+        locally crafted doors<br>
+        built to last.
+      </h1>
+
+      <p>
+        Premium quality wooden and security doors crafted with precision
+        and durability for homes and businesses.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#" class="btn-primary">Request a Quote</a>
+        <a href="#" class="btn-secondary">Learn More</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <!-- Replace with real door image -->
+      <img src="assets/images/doorza.jpg" alt="Door Image">
+    </div>
+
+    <div class="wave"></div>
+  </section>
+</main>
+
+  <footer>
+
+  </footer>
+
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-listing");
+
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    hamburger.classList.toggle("active");
+  });
+</script>
+</body>
+</html>
