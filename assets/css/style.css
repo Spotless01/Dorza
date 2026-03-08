@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
@@ -345,6 +349,13 @@ body {
    PREMIUM CONTACT SECTION
 ================================ */
 
+.google-form-wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+  animation: fadeInUp 1s ease;
+}
+
 .contact-section {
   position: relative;
   min-height: 100vh;
@@ -514,14 +525,14 @@ body {
    RESPONSIVE
 ================================ */
 
-@media (max-width: 1000px) {
+@media (max-width: 950px) {
   .contact-wrapper {
     flex-direction: column;
-    gap: 45px;
+    gap: 50px;
   }
 
   .contact-section {
-    padding: 100px 15px 75px;
+    padding: 150px 20px 80px;
   }
 
   .contact-us-h1 {
@@ -746,7 +757,4 @@ body {
   .mission-vision-wrapper {
     flex-direction: column;
   }
-
 }
-
-
