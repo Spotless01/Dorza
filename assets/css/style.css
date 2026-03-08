@@ -514,7 +514,7 @@ body {
    RESPONSIVE
 ================================ */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .contact-wrapper {
     flex-direction: column;
     gap: 45px;
@@ -748,4 +748,5 @@ body {
   }
 
 }
+
 
