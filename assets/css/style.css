@@ -514,14 +514,14 @@ body {
    RESPONSIVE
 ================================ */
 
-@media (max-width: 950px) {
+@media (max-width: 900px) {
   .contact-wrapper {
     flex-direction: column;
-    gap: 50px;
+    gap: 45px;
   }
 
   .contact-section {
-    padding: 150px 20px 80px;
+    padding: 100px 15px 75px;
   }
 
   .contact-us-h1 {
@@ -748,3 +748,4 @@ body {
   }
 
 }
+
