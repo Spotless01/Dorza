@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
+  <title>Contact Us | Doorza</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 <!-- Navigation -->
 <nav class="nav-container">
-  <a href="home.html" class="brand-name">Dorza</a>
+  <a href="index.html" class="brand-name">Doorza</a>
 
   <ul class="nav-listing">
     <li><a href="index.html">Home</a></li>
     <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="request_door.html">Make Door Request</a></li>
     <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
   </ul>
 
   <div class="hamburger">
@@ -27,80 +28,106 @@
 </nav>
 
 <main>
-<section id="contact" class="contact-section">
-  <div class="contact-container">
-    <h2>Request a Quote</h2>
 
-    <div class="google-form-wrapper">
-      <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLSdoCcd5XEkHSmuhOFMBy7AFuHsx1WQaSlcu81124kCTEkM52Q/viewform?embedded=true" width="390" height="1840" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>"
+<section class="contact-section">
+  <div class="contact-container">
+
+    <!-- LEFT -->
+    <div class="contact-info">
+      <h1>Contact Doorza</h1>
+      <p>
+        Have a question, custom request, or enquiry?  
+        Send us a message and we’ll respond instantly on WhatsApp.
+      </p>
+
+      <div class="contact-details">
+        <p><strong>📍 Location:</strong> Accra, Ghana</p>
+        <p><strong>📞 Phone:</strong> +233 551 836 194</p>
+        <p><strong>📞 Phone:</strong> +233 504 796 215</p>
+        <p><strong>📧 Email:</strong> dorzagh@gmail.com</p>
       </div>
+    </div>
+
+    <!-- RIGHT (FORM) -->
+    <div class="contact-form-card">
+      <form id="contactForm">
+
+        <div class="form-group">
+          <input type="text" id="name" required>
+          <label>Full Name</label>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" id="phone" required>
+          <label>Phone Number</label>
+        </div>
+
+        <div class="form-group">
+          <select id="subject" required>
+            <option value="">Select Message Type</option>
+            <option>General Enquiry</option>
+            <option>Door Purchase</option>
+            <option>Custom Door Request</option>
+            <option>Pricing Request</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <textarea id="message" rows="4"></textarea>
+          <label>Message (Optional)</label>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          Send Message
+        </button>
+
+      </form>
+    </div>
 
   </div>
 </section>
 
-<!-- Success Popup -->
-<div class="success-popup" id="successPopup">
-  <div class="success-box">
-    <p>
-  Your message has been successfully sent.<br>
-  Our team will contact you shortly.
-</p>
-    <button onclick="closePopup()">Close</button>
-  </div>
-</div>
 </main>
 
-  <script>
-    const whatsappNumber = "233551836194";
-const emailAddress = "dorzagh@gmail.com";
-
-const form = document.getElementById("contact-form");
-const popup = document.getElementById("successPopup");
-const submitBtn = document.querySelector(".submit-btn");
-
-if (form) {
-  form.addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  submitBtn.textContent = "Sending your message...";
-  submitBtn.disabled = true;
-
-  const name = document.getElementById("name").value;
-  const phone = document.getElementById("phone").value;
-  const message = document.getElementById("message").value;
-
-  const text =
-    `Hello Doorza,%0A%0A` +
-    `Name: ${name}%0A` +
-    `Phone: ${phone}%0A` +
-    `Note: ${message}`;
-
-  // Open WhatsApp
-  window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
-
-  // Small delay for smoother UX
-  setTimeout(() => {
-    window.location.href =
-      `mailto:${emailAddress}?subject=New Doorza Enquiry&body=${text}`;
-
-    popup.style.display = "flex";
-
-    form.reset();
-    submitBtn.textContent = "Send Message";
-    submitBtn.disabled = false;
-
-  }, 1200);
-});
-}
-
-
-function closePopup() {
-  popup.style.display = "none";
-}
-</script>
-
 <script>
+  const form = document.getElementById("contactForm");
+  const btn = document.getElementById("submitBtn");
+
+  const whatsappNumber = "233551836194";
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    btn.innerText = "Sending your message...";
+    btn.disabled = true;
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    const text =
+      `Hello Doorza,%0A%0A` +
+      `Name: ${name}%0A` +
+      `Phone: ${phone}%0A` +
+      `Type: ${subject}%0A` +
+      `Message: ${message}`;
+
+    setTimeout(() => {
+      window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
+
+      btn.innerText = "Message Sent ✅";
+      form.reset();
+
+      setTimeout(() => {
+        btn.innerText = "Send Message";
+        btn.disabled = false;
+      }, 2000);
+
+    }, 1000);
+  });
+
+  // Hamburger
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-listing");
 
@@ -112,4 +139,3 @@ function closePopup() {
 
 </body>
 </html>
-
