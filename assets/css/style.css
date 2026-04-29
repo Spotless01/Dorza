@@ -153,7 +153,8 @@ body {
   gap: 20px;
 }
 
-.btn-primary {
+
+.primary-btn {
   background: #f5b301;
   padding: 12px 25px;
   border-radius: 30px;
@@ -163,14 +164,23 @@ body {
   transition: 0.3s;
 }
 
-.btn-primary:hover {
+.primary-btn:hover {
   background: #ffcc33;
 }
 
-.btn-secondary {
-  color: white;
+.secondary-btn {
+  color:  #000000;
+  background:  #ffffff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 30px;
+   font-weight: bold;
+  transition: 0.3s;
+}
+
+.secondary-btn:hover {
+  background: #ffcc33;
 }
 
 /* Right image */
@@ -755,6 +765,118 @@ body {
   }
 
   .mission-vision-wrapper {
+    flex-direction: column;
+  }
+}
+
+
+
+/* ===============================
+   CONTACT SECTION (PREMIUM)
+=============================== */
+
+.contact-section {
+  min-height: 100vh;
+  padding: 160px 20px 80px;
+  background: linear-gradient(135deg, #2b1c59, #1a1038);
+  color: white;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+/* LEFT SIDE */
+.contact-info h1 {
+  color: #f5b301;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.contact-details p {
+  margin: 10px 0;
+}
+
+/* RIGHT SIDE FORM */
+.contact-form-card {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* FORM GROUP */
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  background: white;
+  border: 1px solid #555;
+  border-radius: 10px;
+  color: #000000;
+  outline: none;
+  font-weight: bold;
+}
+
+/* LABEL FLOAT */
+.form-group label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #aaa;
+  font-size: 14px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group input:valid + label,
+.form-group textarea:valid + label {
+  top: -8px;
+  left: 10px;
+  font-size: 12px;
+  color: #f5b301;
+  background: #1a1038;
+  padding: 0 5px;
+}
+
+/* BUTTON */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: #f5b301;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #ffcc33;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .contact-container {
     flex-direction: column;
   }
 }
