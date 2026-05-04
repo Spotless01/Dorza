@@ -15,7 +15,7 @@
   <ul class="nav-listing">
     <li><a href="index.html">Home</a></li>
     <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="request_door.html">Request a quote</a></li>
+    <li><a href="request_door.html">Request a Quote</a></li>
     <li><a href="about.html">About Us</a></li>
     <li><a href="contact.html">Contact Us</a></li>
   </ul>
@@ -33,23 +33,23 @@
   <div class="contact-container">
 
     <!-- LEFT -->
-    <div class="contact-info">
-      <h1>Contact Doorza</h1>
+    <div class="contact-info animate">
+      <h1>Contact Dorza</h1>
       <p>
         Have a question, custom request, or enquiry?  
         Send us a message and we’ll respond instantly on WhatsApp.
       </p>
 
       <div class="contact-details">
-        <p><strong>📍 Location:</strong> Accra, Ghana</p>
-        <p><strong>📞 Phone:</strong> +233 551 836 194</p>
-        <p><strong>📞 Phone:</strong> +233 504 796 215</p>
-        <p><strong>📧 Email:</strong> dorzagh@gmail.com</p>
+        <p>📍 Accra, Ghana</p>
+        <p>📞 +233 554 341 075</p>
+        <p>📞 +233 595 677 281</p>
+        <p>📧 dorzagh@gmail.com</p>
       </div>
     </div>
 
     <!-- RIGHT (FORM) -->
-    <div class="contact-form-card">
+    <div class="contact-form-card animate">
       <form id="contactForm">
 
         <div class="form-group">
@@ -64,12 +64,13 @@
 
         <div class="form-group">
           <select id="subject" required>
-            <option value="">Select Message Type</option>
+            <option value="" disabled selected hidden></option>
             <option>General Enquiry</option>
             <option>Door Purchase</option>
             <option>Custom Door Request</option>
             <option>Pricing Request</option>
           </select>
+          <label>Select Message Type</label>
         </div>
 
         <div class="form-group">
@@ -126,6 +127,7 @@
 
     }, 1000);
   });
+  
 
   // Hamburger
   const hamburger = document.querySelector(".hamburger");
@@ -135,6 +137,21 @@
     navMenu.classList.toggle("active");
     hamburger.classList.toggle("active");
   });
+</script>
+
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".animate").forEach(el => {
+  observer.observe(el);
+});
 </script>
 
 </body>
