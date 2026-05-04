@@ -14,7 +14,7 @@
   <ul class="nav-listing">
     <li><a href="index.html">Home</a></li>
     <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="request_door.html">Request a quote</a></li>
+    <li><a href="request_door.html">Request a Quote</a></li>
     <li><a href="about.html">About Us</a></li>
     <li><a href="contact.html">Contact Us</a></li>
   </ul>
@@ -32,13 +32,32 @@
 
   <div class="about-container">
 
-    <!-- INTRO -->
-    <div class="about-header">
+    <!-- HEADER -->
+    <div class="about-header animate">
       <h1 class="about-title">About DORZA</h1>
+      <p class="about-subtitle">
+        Redefining craftsmanship. Standardizing quality. Empowering people.
+      </p>
       <div class="gold-line"></div>
     </div>
 
-    <div class="about-intro">
+
+    <!-- SLIDESHOW -->
+<div class="about-slider animate">
+  <div class="slides" id="slidesTrack">
+    <img src="assets/images/door1.jpg">
+    <img src="assets/images/door2.jpg">
+    <img src="assets/images/door3.jpg">
+    <img src="assets/images/door4.jpg">
+
+    <!-- duplicate for smooth infinite loop -->
+    <img src="assets/images/door1.jpg">
+    <img src="assets/images/door2.jpg">
+  </div>
+</div>
+
+    <!-- INTRO -->
+   <div class="about-intro animate">
       <p>
         <strong>DORZA</strong> is a Ghanaian door manufacturing and carpentry 
         standardization brand focused on producing high-quality, reliable, 
@@ -66,25 +85,28 @@
       </p>
     </div>
 
-    <!-- MISSION & VISION -->
-    <div class="mission-vision-wrapper">
+    <div class="section-divider animate"></div>
 
-      <div class="mv-card">
-        <h2>🎯 Mission Statement</h2>
+    <!-- MISSION & VISION -->
+  <div class="mission-vision-wrapper">
+
+      <div class="mv-card animate">
+        <div class="mv-icon">🎯</div>
+        <h2>Mission</h2>
         <p>
-          Our mission is to standardize door production, empower carpenters, 
-          and provide customers with reliable, high-quality Ghana-made doors 
-          through innovation, certification, and sustainable employment systems.
+          To standardize door production, empower carpenters, and provide 
+          customers with reliable, high-quality Ghana-made doors through 
+          innovation, certification, and sustainable employment systems.
         </p>
       </div>
 
-      <div class="mv-card">
-        <h2>🌍 Vision Statement</h2>
+      <div class="mv-card animate">
+        <div class="mv-icon">🌍</div>
+        <h2>Vision</h2>
         <p>
           To become the most trusted and globally recognized door brand 
-          built from Ghana, creating a unified network of certified craftsmen, 
-          transforming local carpentry into a modern industry, and delivering 
-          high-quality Ghana-made doors across Ghana, Africa, and the world.
+          built from Ghana, creating a unified network of certified craftsmen 
+          and delivering high-quality doors across Africa and beyond.
         </p>
       </div>
 
@@ -103,6 +125,20 @@
     navMenu.classList.toggle("active");
     hamburger.classList.toggle("active");
   });
+</script>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".animate").forEach(el => {
+  observer.observe(el);
+});
 </script>
 </body>
 </html>
