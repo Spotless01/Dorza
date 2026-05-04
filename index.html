@@ -1,20 +1,28 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dorza</title>
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Google Font -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <!-------- Navigation Section -------->
+
+<!-- NAV -->
+
 <nav class="nav-container">
   <a href="index.html" class="brand-name">Dorza</a>
 
   <ul class="nav-listing">
     <li><a href="index.html">Home</a></li>
     <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="request_door.html">Request a quote</a></li>
+    <li><a href="request_door.html">Request a Quote</a></li>
     <li><a href="about.html">About Us</a></li>
     <li><a href="contact.html">Contact Us</a></li>
   </ul>
@@ -27,39 +35,194 @@
 </nav>
 
 <main>
-  <section class="hero">
-    <div class="hero-content">
-      <h1>
-        <span class="highlight">Dorza</span><br>
-        locally crafted doors<br>
-        built to last.
-      </h1>
 
-      <p>
-        Premium quality wooden and security doors crafted with precision
-        and durability for homes and businesses.
-      </p>
+<!-- HERO -->
 
-      <div class="hero-buttons">
-        <a href="request_door.html" class="primary-btn">Request a quote</a>
-        <a href="about.html" class="secondary-btn">About Dorza</a>
+<section class="hero">
+
+  <!-- Background slideshow -->
+
+  <div class="hero-bg">
+    <img src="assets/images/door1.jpg" class="bg-slide active">
+    <img src="assets/images/door2.jpg" class="bg-slide">
+    <img src="assets/images/door3.jpg" class="bg-slide">
+    <img src="assets/images/door4.jpg" class="bg-slide">
+  </div>
+
+  <!-- Overlay -->
+
+  <div class="hero-overlay"></div>
+
+  <!-- Content -->
+
+  <div class="hero-content">
+    <h1 class="fade-up">
+      <span class="highlight">Dorza</span><br>
+      Locally crafted doors<br>
+      built to last.
+    </h1>
+
+
+<p class="fade-up delay">
+  Premium wooden and security doors made with precision,
+  durability, and trust.
+</p>
+
+<div class="hero-buttons fade-up delay-2">
+  <a href="request_door.html" class="primary-btn">Request a Door</a>
+  <a href="about.html" class="secondary-btn">About Dorza</a>
+</div>
+
+
+  </div>
+
+  <!-- Floating Image -->
+
+  <div class="hero-image float">
+    <img src="assets/images/doorza.jpg" alt="Door Image">
+  </div>
+
+</section>
+
+<!-- ===============================
+     WHY CHOOSE DORZA
+================================ -->
+
+<section class="features-section">
+
+<h2 class="section-title reveal">Why Choose Dorza</h2>
+
+  <div class="features-grid">
+
+
+<div class="feature-card reveal-left">
+  <h3>Premium Quality</h3>
+  <p>Every door is crafted with durability, strength, and long-term value in mind.</p>
+</div>
+
+<div class="feature-card reveal">
+  <h3>Certified Craftsmanship</h3>
+  <p>We work with trained and verified carpenters to ensure consistent standards.</p>
+</div>
+
+<div class="feature-card reveal-right">
+  <h3>Reliable Delivery</h3>
+  <p>We ensure your doors are delivered on time without compromising quality.</p>
+</div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ===============================
+     LUXURY SHOWROOM (SLIDER)
+================================ -->
+<section class="showroom-section reveal">
+
+  <h2 class="section-title">Our Doors Collection</h2>
+
+  <div class="showroom-container">
+    <div class="showroom-track">
+
+       <div class="showroom-card">
+        <img src="assets/images/door1.jpg">
       </div>
+
+      <div class="showroom-card">
+        <img src="assets/images/door2.jpg">
+      </div>
+
+      <div class="showroom-card">
+        <img src="assets/images/door3.jpg">
+      </div>
+
+      <div class="showroom-card">
+        <img src="assets/images/door4.jpg">
+      </div>
+
+    </div>
+  </div>
+
+  <a href="gallery.html" class="primary-btn">View Full Gallery</a>
+
+</section>
+
+
+<!-- ===============================
+     HOW IT WORKS
+================================ -->
+<section class="process-section reveal">
+
+  <h2 class="section-title">How It Works</h2>
+
+  <div class="process-steps">
+
+    <div class="step">
+      <span>1</span>
+      <p>Request your door</p>
     </div>
 
-    <div class="hero-image">
-      <!-- Replace with real door image -->
-      <img src="assets/images/doorza.jpg" alt="Door Image">
+    <div class="step">
+      <span>2</span>
+      <p>We design & confirm</p>
     </div>
 
-    <div class="wave"></div>
-  </section>
+    <div class="step">
+      <span>3</span>
+      <p>Production begins</p>
+    </div>
+
+    <div class="step">
+      <span>4</span>
+      <p>Delivery & installation</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===============================
+     TRUST SECTION
+================================ -->
+<section class="trust-section reveal">
+
+  <h2 class="section-title">Trusted by Clients</h2>
+
+  <p class="trust-text">
+    Dorza is building a trusted ecosystem where quality, reliability, and craftsmanship meet.
+  </p>
+
+</section>
+
+
+<!-- VIDEO SECTION -->
+
+<section class="video-section">
+  <h2>See Our Craftsmanship</h2>
+
+  <div class="video-wrapper">
+    <video controls>
+      <source src="assets/videos/doorza.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+
+<section class="cta-section">
+  <h2>Ready to upgrade your doors?</h2>
+  <a href="contact.html" class="primary-btn">Contact Us</a>
+</section>
+
 </main>
 
-  <footer>
-
-  </footer>
+<!-- JS -->
 
 <script>
+  // Hamburger
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-listing");
 
@@ -67,6 +230,65 @@
     navMenu.classList.toggle("active");
     hamburger.classList.toggle("active");
   });
+
+  // Background slideshow
+  const slides = document.querySelectorAll(".bg-slide");
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 4000);
 </script>
+
+
+<script>
+  const track = document.getElementById("showroomTrack");
+
+let scrollAmount = 0;
+
+setInterval(() => {
+  scrollAmount += 300;
+
+  if (scrollAmount >= track.scrollWidth - track.clientWidth) {
+    scrollAmount = 0;
+  }
+
+  track.style.transform = `translateX(-${scrollAmount}px)`;
+}, 2500);
+</script>
+
+<script>
+const reveals = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+
+function revealOnScroll() {
+  const windowHeight = window.innerHeight;
+
+  reveals.forEach(el => {
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+</script>
+
+<script>
+  window.addEventListener("scroll", () => {
+  const nav = document.querySelector(".nav-container");
+
+  if (window.scrollY > 50) {
+    nav.classList.add("nav-scrolled");
+  } else {
+    nav.classList.remove("nav-scrolled");
+  }
+});
+</script>
+
 </body>
 </html>
