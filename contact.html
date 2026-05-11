@@ -96,7 +96,7 @@
   class="whatsapp-float"
   target="_blank"
 >
-  <img src="assets/icons/whatsapp.jpg" alt="WhatsApp">
+  <img src="assets/images/whatsapp.png" alt="WhatsApp">
 </a>
 
 <script>
@@ -147,9 +147,33 @@
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-listing");
 
-  hamburger.addEventListener("click", () => {
+  // Toggle menu
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation();
+
     navMenu.classList.toggle("active");
     hamburger.classList.toggle("active");
+  });
+
+  // Close when clicking nav links
+  document.querySelectorAll(".nav-listing a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      hamburger.classList.remove("active");
+    });
+  });
+
+  // Close when clicking anywhere outside
+  document.addEventListener("click", (e) => {
+
+    const clickedInsideMenu = navMenu.contains(e.target);
+    const clickedHamburger = hamburger.contains(e.target);
+
+    if (!clickedInsideMenu && !clickedHamburger) {
+      navMenu.classList.remove("active");
+      hamburger.classList.remove("active");
+    }
+
   });
 </script>
 
