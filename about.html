@@ -56,6 +56,25 @@
   </div>
 </div>
 
+<!-- STATS -->
+<div class="about-stats animate">
+<div class="stat-card">
+  <h2 data-target="100" data-suffix="+">0</h2>
+  <p>Premium Designs</p>
+</div>
+
+<div class="stat-card">
+  <h2 data-target="50" data-suffix="+">0</h2>
+  <p>Skilled Craftsmen</p>
+</div>
+
+<div class="stat-card">
+  <h2 data-target="24">0</h2>
+  <p>Hours Customer Support</p>
+</div>
+
+</div>
+
     <!-- INTRO -->
    <div class="about-intro animate">
       <p>
@@ -66,9 +85,7 @@
       </p>
 
       <p>
-        We exist to transform the fragmented carpentry industry into a 
-        structured, trusted, and scalable system that benefits customers, 
-        carpenters, and the national economy.
+        Our operations are designed are to simplify the process for homeowners, developers, contractors, and property owners by creating a more organized and dependable way to access quality wooden doors
       </p>
 
       <p>
@@ -80,8 +97,7 @@
       </p>
 
       <p class="about-goal">
-        Our goal is to restore confidence in locally produced doors and 
-        strengthen the industry.
+        DORZA is committed to promoting confidence in quality locally crafted wooden doors by supporting structured production, skilled craftsmanship, and higher finishing standards within the industry.
       </p>
     </div>
 
@@ -113,9 +129,181 @@
     </div>
 
   </div>
-
+  
 </section>
 </main>
+
+<!-- ===============================
+     WHY DORZA SECTION
+================================ -->
+
+<section class="why-dorza-section animate">
+
+  <div class="why-dorza-left">
+    <span class="mini-tag">WHY DORZA</span>
+
+    <h2>
+      We are building a new standard
+      for wooden doors in Ghana.
+    </h2>
+
+    <p>
+      Dorza is not just producing doors.
+      We are building structure, consistency,
+      trust, and opportunity within the carpentry industry.
+    </p>
+
+    <div class="why-points">
+
+      <div class="why-item">
+        <div class="why-icon">✔</div>
+        <div>
+          <h3>Premium Craftsmanship</h3>
+          <p>Built with attention to detail and long-term durability.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon">✔</div>
+        <div>
+          <h3>Reliable Production</h3>
+          <p>Structured systems that ensure consistency and trust.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon">✔</div>
+        <div>
+          <h3>Empowering Local Talent</h3>
+          <p>Creating sustainable opportunities for skilled craftsmen.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="why-dorza-right">
+    <img src="assets/images/door3.jpg" alt="Dorza Door">
+  </div>
+
+</section>
+
+
+<!-- ===============================
+     FLOATING TESTIMONIAL SECTION
+================================ -->
+<section class="testimonial-section animate">
+
+  <span class="mini-tag">CLIENT EXPERIENCE</span>
+
+  <h2 class="testimonial-title">
+    Built with quality. Trusted by clients.
+  </h2>
+
+  <div class="testimonial-box">
+
+    <div class="testimonial active">
+      <p>
+        “The finishing quality exceeded expectations.
+        Dorza delivered professionalism from start to finish.”
+      </p>
+      <h4>— Home Owner</h4>
+    </div>
+
+    <div class="testimonial">
+      <p>
+        “Beautiful craftsmanship and smooth delivery process.
+        Highly recommended.”
+      </p>
+      <h4>— Property Developer</h4>
+    </div>
+
+    <div class="testimonial">
+      <p>
+        “The doors transformed the appearance of our building.”
+      </p>
+      <h4>— Client</h4>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ===============================
+     FINAL CTA
+================================ -->
+
+<section class="about-cta-section animate">
+
+  <div class="about-cta-box">
+
+    <span class="mini-tag">START WITH DORZA</span>
+
+    <h2>
+      Ready to upgrade your doors?
+    </h2>
+
+    <p>
+      Experience premium Ghanaian craftsmanship
+      with structured production and reliable delivery.
+    </p>
+
+    <div class="about-cta-buttons">
+      <a href="request_door.html" class="primary-btn">
+        Request a Quote
+      </a>
+
+      <a href="gallery.html" class="secondary-btn">
+        View Gallery
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- TIMELINE -->
+<div class="timeline-section">
+
+  <div class="timeline-item animate">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <h3>Built From Craftsmanship</h3>
+      <p>
+        Dorza was founded to bring structure, trust,
+        and professionalism into Ghana’s carpentry industry.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item animate">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <h3>Empowering Local Talent</h3>
+      <p>
+        We connect skilled craftsmen with real opportunities
+        while maintaining strict quality standards.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item animate">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <h3>Scaling Across Africa</h3>
+      <p>
+        Our vision is to become a globally trusted African
+        door manufacturing brand.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<div class="cursor-glow"></div>
 
 <script>
   const hamburger = document.querySelector(".hamburger");
@@ -140,5 +328,120 @@ document.querySelectorAll(".animate").forEach(el => {
   observer.observe(el);
 });
 </script>
+
+
+<script>
+// Animated Stats Counter
+const counters = document.querySelectorAll("[data-target]");
+
+counters.forEach(counter => {
+
+  const target = +counter.getAttribute("data-target");
+  const suffix = counter.getAttribute("data-suffix") || "";
+
+  const updateCounter = () => {
+
+    const current = +counter.innerText.replace(/\D/g, "");
+
+    const increment = target / 80;
+
+    if (current < target) {
+      counter.innerText = Math.ceil(current + increment) + suffix;
+      setTimeout(updateCounter, 30);
+    } else {
+      counter.innerText = target + suffix;
+    }
+  };
+
+  updateCounter();
+
+});
+</script>
+
+<script>
+const spotlightCards = document.querySelectorAll(
+  ".showroom-card, .mv-card, .why-dorza-right"
+);
+
+spotlightCards.forEach(card => {
+
+  card.addEventListener("mousemove", e => {
+
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    card.style.setProperty("--x", `${x}px`);
+    card.style.setProperty("--y", `${y}px`);
+
+  });
+
+});
+</script>
+
+<script>
+const testimonials = document.querySelectorAll(".testimonial");
+
+let testimonialIndex = 0;
+
+setInterval(() => {
+
+  testimonials[testimonialIndex].classList.remove("active");
+
+  testimonialIndex =
+    (testimonialIndex + 1) % testimonials.length;
+
+  testimonials[testimonialIndex].classList.add("active");
+
+}, 4000);
+</script>
+
+<script>
+const tiltCards = document.querySelectorAll(
+  ".mv-card, .feature-card, .stat-card, .testimonial-card"
+);
+
+tiltCards.forEach(card => {
+
+  card.addEventListener("mousemove", (e) => {
+
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = -(y - centerY) / 18;
+    const rotateY = (x - centerX) / 18;
+
+    card.style.transform =
+      `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+
+  });
+
+  card.addEventListener("mouseleave", () => {
+
+    card.style.transform =
+      "rotateX(0) rotateY(0) translateY(0)";
+
+  });
+
+});
+</script>
+
+<script>
+const glow = document.querySelector(".cursor-glow");
+
+document.addEventListener("mousemove", (e) => {
+
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+
+});
+</script>
+
 </body>
 </html>
