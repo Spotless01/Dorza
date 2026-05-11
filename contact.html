@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | Doorza</title>
+  <title>Contact Us | Dorza</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 <!-- Navigation -->
 <nav class="nav-container">
-  <a href="index.html" class="brand-name">Doorza</a>
+  <a href="index.html" class="brand-name">Dorza</a>
 
   <ul class="nav-listing">
     <li><a href="index.html">Home</a></li>
@@ -36,8 +36,7 @@
     <div class="contact-info animate">
       <h1>Contact Dorza</h1>
       <p>
-        Have a question, custom request, or enquiry?  
-        Send us a message and we’ll respond instantly on WhatsApp.
+        Send us a message and our team will respond to your inquiry within 24 hours
       </p>
 
       <div class="contact-details">
@@ -90,11 +89,22 @@
 
 </main>
 
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a
+  href="https://wa.me/233551836194?text=Hello%20Dorza,%20I%20would%20like%20to%20make%20an%20enquiry."
+  class="whatsapp-float"
+  target="_blank"
+>
+  <img src="assets/images/whatsapp.png" alt="WhatsApp">
+</a>
+
 <script>
   const form = document.getElementById("contactForm");
   const btn = document.getElementById("submitBtn");
 
-  const whatsappNumber = "233551836194";
+  // Your email
+  const emailAddress = "dorzagh@gmail.com";
 
   form.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -107,27 +117,31 @@
     const subject = document.getElementById("subject").value;
     const message = document.getElementById("message").value;
 
-    const text =
-      `Hello Doorza,%0A%0A` +
-      `Name: ${name}%0A` +
-      `Phone: ${phone}%0A` +
-      `Type: ${subject}%0A` +
+    // Email content
+    const body =
+      `Hello Doorza,\n\n` +
+      `Name: ${name}\n` +
+      `Phone: ${phone}\n` +
+      `Message Type: ${subject}\n` +
       `Message: ${message}`;
 
+    // Open email client
     setTimeout(() => {
-      window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
+
+      window.location.href =
+        `mailto:${emailAddress}?subject=Dorza Customer Enquiry&body=${encodeURIComponent(body)}`;
 
       btn.innerText = "Message Sent ✅";
+
       form.reset();
 
       setTimeout(() => {
         btn.innerText = "Send Message";
         btn.disabled = false;
-      }, 2000);
+      }, 2500);
 
-    }, 1000);
+    }, 1200);
   });
-  
 
   // Hamburger
   const hamburger = document.querySelector(".hamburger");
